@@ -13,7 +13,19 @@ public class RectangleViewer
 
       RectangleComponent component = new RectangleComponent();
       frame.add(component);
-
       frame.setVisible(true);
+      
+      RectangleComponent component2 = new RectangleComponent(50,50,30,30);
+      frame.add(component2);
+      frame.setVisible(true);
+      
+      FaceComponent component3 = new FaceComponent();
+      frame.add(component3);
+      frame.setVisible(true);
+      
+      // animates the city scape
+      //for (int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++){
+          
+      
    }
 }
