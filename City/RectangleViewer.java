@@ -3,7 +3,8 @@ import javax.swing.JFrame;
 
 public class RectangleViewer
 {
-   public static void main(String[] args)
+    final static int ANIMATION_TIME_IN_SECONDS = 60;
+   public static void main(String[] args) throws InterruptedException
    {
       JFrame frame = new JFrame();
 
@@ -24,8 +25,11 @@ public class RectangleViewer
       frame.setVisible(true);
       
       // animates the city scape
-      //for (int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++){
+    for (int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++){
+          component.nextFrame();
+          Thread.sleep(500);
           
       
    }
+ }
 }

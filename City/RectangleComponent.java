@@ -46,4 +46,15 @@ public class RectangleComponent extends JComponent
       // Draw moved rectangle
       g2.draw(box);
    }
+   
+   public void nextFrame(){
+       // udpate the objects in the cityscape so they are animated
+       
+       box.translate(10,10);
+       // request that the Java Runtime repaints this component by invoking its
+       //paint Component does not explicitly invokoe the paint Component method
+       
+       repaint();
+       
+    }
 }
