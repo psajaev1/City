@@ -4,16 +4,56 @@ import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.JComponent;
 
+
 public class EllipseComponent extends JComponent
 {
     int x, y, w, h;
-     public void paintComponent(Graphics g){
+Ellipse2D.double Ellipse1;
+EllipseComponent(){
+    x = 100;
+    y = 100;
+    w = 50;
+    h = 50;
+}
+    
+EllipseComponent(int x, int y, int w, int h){
+        
+   this.x = x;
+   this.y = y;
+   this.w = w;
+   this.h = h;
+}
+     
+public void paintComponent(Graphics g){
     // recovers Graphics2D
     Graphics2D g2 = (Graphics2D) g;
     
     // draw circle
     Ellipse2D.Double head = new Ellipse2D.Double(5, 10, 100, 100);
     g2.draw(head);
+    
+    EllipseComponent Component1 = new EllipseComponent();
+    
+    int a = (int)(Math.random() * 4);
+    if (a == 1){
+        g2.setColor(Color.GREEN);
+        g2.draw(Ellipse1);
+    }
+    else if (a == 2){
+        g2.setColor(Color.RED);
+        g2.draw(Ellipse1);
+    }
+    else if (a == 3){
+        g2.setColor(Color.BLUE);
+        g2.draw(Ellipse1);
+    }
+    else{
+        g2.setColor(Color.ORANGE);
+        g2.draw(Ellipse1);
+}
+    
+   
+    
 }
 
 // Sets X variable
@@ -59,4 +99,5 @@ public int getW(){
 public int getH(){
     return h;
 }
+
 }
