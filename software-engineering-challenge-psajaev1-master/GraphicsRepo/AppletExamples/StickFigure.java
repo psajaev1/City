@@ -23,7 +23,12 @@ public class StickFigure
       color = shade;
       height = size;
    }
-
+   
+   // sets the height of the var
+   public void setHeight(int h1){
+       height = h1;
+    }
+   
    //-----------------------------------------------------------------
    //  Draws this figure relative to baseX, baseY, and height.
    //-----------------------------------------------------------------
@@ -34,14 +39,16 @@ public class StickFigure
       page.setColor (color);
 
       // head
+      page.drawOval(baseX-10, top, 20,20);
 
       // trunk
+      page.drawLine(baseX, top+20, baseX, baseY-30);
 
-      //page.drawLine (baseX, baseY-30, baseX-15, baseY);  // legs
-      //page.drawLine (baseX, baseY-30, baseX+15, baseY);
+      page.drawLine (baseX, baseY-30, baseX-15, baseY);  // legs
+      page.drawLine (baseX, baseY-30, baseX+15, baseY);
 
-      //page.drawLine (baseX, baseY-70, baseX-25, baseY-70);  // arms
-      //page.drawLine (baseX, baseY-70, baseX+20, baseY-85);
+      page.drawLine (baseX, baseY-70, baseX-25, baseY-70);  // arms
+      page.drawLine (baseX, baseY-70, baseX+20, baseY-85);
 
    }
 }

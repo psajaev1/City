@@ -16,20 +16,29 @@ public class LineUp extends Applet
    private final int VARIANCE = 40;
 
    private StickFigure figure1;
-
+   private StickFigure figure2;
+   private StickFigure figure3;
+   private StickFigure figure4;
+   
+   Random generator;
    //-----------------------------------------------------------------
    //  Creates several stick figures with varying characteristics.
    //-----------------------------------------------------------------
    public void init ()
+   // like a constructor for an applet, initialize stuff in it, only runs once
    {
-      int h1;  // heights of stick figures
+      int h1,h2,h3,h4;  // heights of stick figures
       Random generator = new Random();
 
       h1 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-
+      h2 = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      h3 = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      h4 = HEIGHT_MIN + generator.nextInt(VARIANCE);
 
       figure1 = new StickFigure (100, 150, Color.red, h1);
-
+      figure2 = new StickFigure (150, 150, Color.green, h2);
+      figure3 = new StickFigure (200, 150, Color.yellow, h3);
+      figure4 = new StickFigure (250, 150, Color.blue, h4);
 
       setBackground (Color.black);
       setSize (APPLET_WIDTH, APPLET_HEIGHT);
@@ -42,7 +51,20 @@ public class LineUp extends Applet
    {
 
       figure1.draw (page);
-
+      figure2.draw (page);
+      figure3.draw (page);
+      figure4.draw (page);
+      
+      int newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      figure1.setHeight(newHeight);
+      
+      // puase for one second, sleep is milliseconds
+      try{Thread.sleep(1000);
+    }
+    catch(InterruptedException e) {}
+    
+    figure1.draw(page);
+    repaint();
 
    }
 }
