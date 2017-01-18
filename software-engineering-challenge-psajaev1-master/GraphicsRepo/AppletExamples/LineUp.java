@@ -20,7 +20,7 @@ public class LineUp extends Applet
    private StickFigure figure3;
    private StickFigure figure4;
    
-   Random generator;
+   Random generator = new Random();
    //-----------------------------------------------------------------
    //  Creates several stick figures with varying characteristics.
    //-----------------------------------------------------------------
@@ -58,8 +58,8 @@ public class LineUp extends Applet
       int newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
       figure1.setHeight(newHeight);
       
-      // puase for one second, sleep is milliseconds
-      try{Thread.sleep(1000);
+      // pause for one second, sleep is milliseconds
+      try{Thread.sleep(500);
     }
     catch(InterruptedException e) {}
     

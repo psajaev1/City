@@ -11,8 +11,11 @@ import javax.swing.*;
  */
 
 public class Startingpoint extends JApplet implements Runnable// new stuff
+// runnable lets you set up a thread, it is an interface
 {
     // instance variables - replace the example below with your own
+    private int ox = 0;
+    private int oy = 0;
     private int x = 0;
     private int y = 0;
     private int dx = 1;
@@ -47,16 +50,32 @@ public class Startingpoint extends JApplet implements Runnable// new stuff
     {
         //sets up the Thread
         Thread thread = new Thread(this);
-        thread.start();
+        thread.start();// this calls the run method
        
     }
     //@Override
     public void run()
     {
         //thread information
-       
-
-    }
+        
+       while (true){
+           ox = x;
+           oy = y;
+           x += dx;
+           y += dy;
+           
+           repaint();
+           
+           try{
+                Thread.sleep(17);}
+                catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                    
+           
+                }
+        
+            }
 
     /**
      * Called by the browser or applet viewer to inform this JApplet that
@@ -79,7 +98,12 @@ public class Startingpoint extends JApplet implements Runnable// new stuff
     //@Override
     public void paint(Graphics g)
     {
-
+        g.setColor(Color.WHITE);
+        // sets up the circle
+        g.fillOval(ox - radius/2,oy - radius/2,radius,radius);
+        
+        g.setColor(Color.RED);
+        g.fillOval(x - radius/2,y - radius/2,radius,radius);
        
 
     }

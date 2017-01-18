@@ -19,7 +19,7 @@ public class Apple implements Runnable
     public Apple(String s)
     {
         // initialise instance variables
-        name =s;
+        name = s;
         time = r.nextInt(999);
     }
 
