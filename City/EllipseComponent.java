@@ -8,7 +8,7 @@ import javax.swing.JComponent;
 public class EllipseComponent extends JComponent
 {
     int x, y, w, h;
-Ellipse2D.double Ellipse1;
+//Ellipse2D.double Ellipse1;
 EllipseComponent(){
     x = 100;
     y = 100;
