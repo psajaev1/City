@@ -18,7 +18,7 @@ public class CityScape extends JApplet implements Runnable
     private int x = 0;
     private int y = 200;
     private int dx = 1;
-    private int dy = 200;
+    private int dy = 50;
     private int radius = 40;
     
     private Building building1;
@@ -44,13 +44,14 @@ public class CityScape extends JApplet implements Runnable
        rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
     
         // provide any initialisation necessary for your JApplet
-        
-        building1 = new Building ( 50,500,Color.blue, 700);
-        building2 = new Building ( 50,500,Color.blue, 600);
-        building3 = new Building ( 50,500,Color.blue, 500);
-        building4 = new Building ( 50,500,Color.blue, 100);
-        building5 = new Building ( 50,500,Color.blue, 200);
-        building6 = new Building ( 50,500,Color.blue, 300);
+        // 1st number = XPosition
+        // 2nd number = YPosition
+        building1 = new Building ( 50,500,Color.red);
+        building2 = new Building ( 75,200,Color.blue);
+        building3 = new Building ( 150,200,Color.green);
+        building4 = new Building ( 225,200,Color.blue);
+        building5 = new Building ( 300,200,Color.blue);
+        building6 = new Building ( 375,200,Color.blue);
         
     }
 

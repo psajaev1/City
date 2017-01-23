@@ -1,28 +1,28 @@
 
 import java.awt.*;
+import javax.swing.JComponent;
 /**
  * Write a description of class Buildings here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Building
+public class Building extends JComponent
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int length;
-    private int width;
+    private int Xposition;
+    private int Yposition;
     private Color color;
-    private int position;
+    
 
     /**
      * Default constructor for objects of class Buildings
      */
-    public Building(int baseX, int baseY, Color shade, int point)
+    public Building(int baseX, int baseY, Color shade)
     {
-        length = baseX;
-        width = baseY;
+        Xposition = baseX;
+        Yposition = baseY;
         color = shade;
-        position = point;
     }
 
     /**
@@ -40,19 +40,15 @@ public class Building
     
    
 
-      page.setColor (color);
+     page.setColor (color);
 
       // head
-      page.drawLine(length-10, width, 20,20);
-      /*
-      // trunk
-      page.drawLine(baseX, top+20, baseX, baseY-30);
-
-      page.drawLine (baseX, baseY-30, baseX-15, baseY);  // legs
-      page.drawLine (baseX, baseY-30, baseX+15, baseY);
-
-      page.drawLine (baseX, baseY-70, baseX-25, baseY-70);  // arms
-      page.drawLine (baseX, baseY-70, baseX+20, baseY-85);
-      */
+     page.drawRect(Xposition, Yposition, 50,100);
+     //       two numbers above are length, width
+     for (int i = 0; i < 10; i++){
+         page.drawRect(Xposition + (i * 10),Yposition + (i * 10),5,10);
+        }
+ 
+     
     }
 }
