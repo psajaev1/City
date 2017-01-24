@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import javax.swing.*;
 import java.applet.Applet;
@@ -28,6 +27,8 @@ public class CityScape extends JApplet implements Runnable
     private Building building5;
     private Building building6;
     
+    private Ground ground;
+    
     
     /**
      * Called by the browser or applet viewer to inform this JApplet that it
@@ -46,12 +47,15 @@ public class CityScape extends JApplet implements Runnable
         // provide any initialisation necessary for your JApplet
         // 1st number = XPosition
         // 2nd number = YPosition
-        building1 = new Building ( 50,500,Color.red);
-        building2 = new Building ( 75,200,Color.blue);
-        building3 = new Building ( 150,200,Color.green);
-        building4 = new Building ( 225,200,Color.blue);
-        building5 = new Building ( 300,200,Color.blue);
-        building6 = new Building ( 375,200,Color.blue);
+        // lower the number, the higher the starting position,
+        // number entered is the starting position at the top
+        building1 = new Building ( 25,100,50,300,Color.red);
+        building2 = new Building ( 100,100,50,300,Color.blue);
+        building3 = new Building ( 175,100,50,300,Color.green);
+        building4 = new Building ( 250,100,50,300,Color.blue);
+        building5 = new Building ( 325,100,50,300,Color.blue);
+        building6 = new Building ( 400,100,50,300,Color.blue);
+        ground = new Ground(0,400,1000,200,Color.gray);
         
     }
 
@@ -64,6 +68,7 @@ public class CityScape extends JApplet implements Runnable
     {
        Thread thread = new Thread(this);
        thread.start();// calls the run method
+     
         
     }
     
@@ -122,6 +127,8 @@ public class CityScape extends JApplet implements Runnable
         building4.draw (page);
         building5.draw (page);
         building6.draw (page);
+        
+        ground.draw(page);
         
     }
 

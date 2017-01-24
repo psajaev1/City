@@ -12,16 +12,20 @@ public class Building extends JComponent
     /** description of instance variable x (add comment for each instance variable) */
     private int Xposition;
     private int Yposition;
+    private int xLength;
+    private int yLength;
     private Color color;
     
 
     /**
      * Default constructor for objects of class Buildings
      */
-    public Building(int baseX, int baseY, Color shade)
+    public Building(int positionX, int positionY,int length, int width, Color shade)
     {
-        Xposition = baseX;
-        Yposition = baseY;
+        Xposition = positionX;
+        Yposition = positionY;
+        xLength = length;
+        yLength = width;
         color = shade;
     }
 
@@ -37,18 +41,19 @@ public class Building extends JComponent
      * @return    description of the return value
      */
     public void draw (Graphics page){
-    
+        // draws the building
    
 
      page.setColor (color);
 
       // head
-     page.drawRect(Xposition, Yposition, 50,100);
+     page.drawRect(Xposition, Yposition, xLength,yLength);
      //       two numbers above are length, width
-     for (int i = 0; i < 10; i++){
-         page.drawRect(Xposition + (i * 10),Yposition + (i * 10),5,10);
-        }
- 
-     
+     for (int i = 0; i <= 4; i++){// loop to make windows
+         page.drawRect(Xposition + i * 10,Yposition,5,7);
+         for (int j = 0; j <= 29; j++){
+             page.drawRect(Xposition + i*10, Yposition + j * 10, 5, 7);
+            }
+    }
     }
 }
