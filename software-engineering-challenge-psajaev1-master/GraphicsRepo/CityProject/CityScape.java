@@ -20,6 +20,8 @@ public class CityScape extends JApplet implements Runnable
     private int dy = 50;
     private int radius = 40;
     
+    //Color background = new Color(Color.cyan);
+    
     private Building building1;
     private Building building2;
     private Building building3;
@@ -28,6 +30,10 @@ public class CityScape extends JApplet implements Runnable
     private Building building6;
     
     private Ground ground;
+    private Ground ground1;
+    
+    
+    private Street street1;
     
     
     /**
@@ -49,6 +55,8 @@ public class CityScape extends JApplet implements Runnable
         // 2nd number = YPosition
         // lower the number, the higher the starting position,
         // number entered is the starting position at the top
+       getContentPane().setBackground( Color.CYAN );
+        
         building1 = new Building ( 25,100,50,300,Color.red);
         building2 = new Building ( 100,100,50,300,Color.blue);
         building3 = new Building ( 175,100,50,300,Color.green);
@@ -56,6 +64,11 @@ public class CityScape extends JApplet implements Runnable
         building5 = new Building ( 325,100,50,300,Color.blue);
         building6 = new Building ( 400,100,50,300,Color.blue);
         ground = new Ground(0,400,1000,200,Color.gray);
+        ground1 = new Ground(0,450,1000,10,Color.yellow);
+        
+        street1 = new Street (0,425, 50 ,5,Color.white);
+        
+        
         
     }
 
@@ -114,7 +127,8 @@ public class CityScape extends JApplet implements Runnable
      */
     public void paint(Graphics page)
     {
-        page.setColor(Color.WHITE);
+       // setBackground(Color.blue);
+        page.setColor(Color.white);
         // sets up the circle
         page.fillOval(ox - radius/2,oy - radius/2,radius,radius);
         
@@ -129,6 +143,9 @@ public class CityScape extends JApplet implements Runnable
         building6.draw (page);
         
         ground.draw(page);
+        ground1.draw(page);
+        street1.draw(page);
+       
         
     }
 

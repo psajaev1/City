@@ -47,10 +47,13 @@ public class Building extends JComponent
      page.setColor (color);
 
       // head
+      
      page.drawRect(Xposition, Yposition, xLength,yLength);
+     //page.fillRect(Xposition, Yposition, xLength,yLength);
      //       two numbers above are length, width
      for (int i = 0; i <= 4; i++){// loop to make windows
          page.drawRect(Xposition + i * 10,Yposition,5,7);
+         
          for (int j = 0; j <= 29; j++){
              page.drawRect(Xposition + i*10, Yposition + j * 10, 5, 7);
             }
