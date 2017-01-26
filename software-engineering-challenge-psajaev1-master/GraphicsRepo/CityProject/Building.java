@@ -49,14 +49,43 @@ public class Building extends JComponent
       // head
       
      page.drawRect(Xposition, Yposition, xLength,yLength);
-     //page.fillRect(Xposition, Yposition, xLength,yLength);
+     page.fillRect(Xposition, Yposition, xLength,yLength);
+    
      //       two numbers above are length, width
-     for (int i = 0; i <= 4; i++){// loop to make windows
-         page.drawRect(Xposition + i * 10,Yposition,5,7);
+     
+    if (xLength == 50 && yLength == 300){
+     for (int i = 0; i <= 3; i++){// loop to make windows
+         page.drawRect(Xposition + i * 10 + 5,Yposition + 10,4,6);
          
-         for (int j = 0; j <= 29; j++){
-             page.drawRect(Xposition + i*10, Yposition + j * 10, 5, 7);
+         for (int j = 0; j <= 27; j++){
+             page.drawRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+             page.setColor(Color.yellow);
+            page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
             }
-    }
+        }
+      }
+    else if (xLength == 60 && yLength == 200){
+     for (int i = 0; i <= 4; i++){// loop to make windows
+         page.drawRect(Xposition + i * 10 + 5,Yposition + 10,4,6);
+         
+         for (int j = 0; j <= 18; j++){
+             page.drawRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+             page.setColor(Color.yellow);
+            page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+            }
+        }
+      }
+      
+    else if (xLength == 40 && yLength == 250){
+     for (int i = 0; i <= 2; i++){// loop to make windows
+         page.drawRect(Xposition + i * 10 + 5,Yposition + 10,4,6);
+         
+         for (int j = 0; j <= 22; j++){
+             page.drawRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+             page.setColor(Color.yellow);
+            page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+            }
+        }
+      }
     }
 }
