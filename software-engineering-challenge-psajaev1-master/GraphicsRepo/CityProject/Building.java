@@ -60,7 +60,9 @@ public class Building extends JComponent
          for (int j = 0; j <= 27; j++){
              page.drawRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
              page.setColor(Color.yellow);
-            page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+             int random = (int)(Math.random() * 100);// if loop used to animate windows
+             if (random >= 50)
+                page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
             }
         }
       }
@@ -71,7 +73,9 @@ public class Building extends JComponent
          for (int j = 0; j <= 18; j++){
              page.drawRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
              page.setColor(Color.yellow);
-            page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+             int random = (int)(Math.random() * 100);// if loop used to animate windows
+             if (random >= 50)
+                page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
             }
         }
       }
@@ -83,7 +87,9 @@ public class Building extends JComponent
          for (int j = 0; j <= 22; j++){
              page.drawRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
              page.setColor(Color.yellow);
-            page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
+             int random = (int)(Math.random() * 100);// if loop used to animate windows
+             if (random >= 50)
+                page.fillRect(Xposition + i*10 + 5, Yposition + j * 10 + 10, 5, 7);
             }
         }
       }

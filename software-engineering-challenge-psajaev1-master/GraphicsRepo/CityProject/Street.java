@@ -42,9 +42,6 @@ public class Street
     public void draw (Graphics page){
         page.setColor (color);
         
-       
-        
-        
         for (int i = 0; i <=2; i++){
             page.drawRect(xPosition ,yPosition + i * 50 , xLength, yLength);
             page.fillRect(xPosition ,yPosition + i * 50 , xLength, yLength);

@@ -9,7 +9,7 @@ import java.util.*;
  * Phillip Sajaev
  * @version (a version number)
  */
-public class CityScape extends Applet implements Runnable
+public class CityScape extends JApplet implements Runnable
 {
     // instance variables 
     private int ox = 0;
@@ -20,7 +20,7 @@ public class CityScape extends Applet implements Runnable
     private int dy = 50;
     private int radius = 40;
     
-    //Color background = new Color(Color.cyan);
+   
     
     private Building building1;
     private Building building2;
@@ -47,7 +47,7 @@ public class CityScape extends Applet implements Runnable
         // including some versions of Netscape & Internet Explorer which do 
         // not allow access to the AWT system event queue which JApplets do 
         // on startup to check access. May not be necessary with your browser. 
-        //JRootPane rootPane = this.getRootPane();    
+      //  JRootPane rootPane = this.getRootPane();    
        // rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
     
         // provide any initialisation necessary for your JApplet
@@ -60,9 +60,9 @@ public class CityScape extends Applet implements Runnable
         building1 = new Building ( 25,100,50,300,Color.red);
         building2 = new Building ( 100,200,60,200,Color.blue);
         building3 = new Building ( 175,150,40,250,Color.green);
-        building4 = new Building ( 250,100,50,300,Color.cyan);
+        building4 = new Building ( 250,100,50,300,Color.magenta);
         building5 = new Building ( 325,200,60,200,Color.red);
-        building6 = new Building ( 400,150,40,250,Color.cyan);
+        building6 = new Building ( 400,150,40,250,Color.magenta);
         ground = new Ground(0,400,1000,200,Color.gray);
         ground1 = new Ground(0,450,1000,10,Color.yellow);
         
@@ -128,15 +128,16 @@ public class CityScape extends Applet implements Runnable
      */
     public void paint(Graphics page)
     {
+        getContentPane().setBackground(Color.cyan); 
        // setBackground(Color.blue);
-        page.setColor(Color.white);
+        page.setColor(Color.cyan);
         // sets up the circle
         page.fillOval(ox - radius/2,oy - radius/2,radius,radius);
         
         page.setColor(Color.YELLOW);
         page.fillOval(x - radius/2,y - radius/2,radius,radius);
         
-        setBackground(Color.cyan); 
+   
         building1.draw (page);
         building2.draw (page);
         building3.draw (page);
@@ -148,7 +149,7 @@ public class CityScape extends Applet implements Runnable
         ground1.draw(page);
         street1.draw(page);
        
-      //setBackground(Color.cyan); 
+      //getContentPane().setBackground(Color.black); 
     }
 
     /**
